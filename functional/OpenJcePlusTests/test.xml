@@ -43,6 +43,8 @@
 	<target name="test">
 		<junit fork="yes" printsummary="on" showoutput="yes" haltonfailure="yes">
 			<jvmarg line="--add-exports=java.base/sun.security.util=ALL-UNNAMED" />
+			<jvmarg line="--add-exports=java.base/sun.security.x509=openjceplus" />
+			<jvmarg line="--add-exports=java.base/sun.security.x509=ALL-UNNAMED" />
 			<jvmarg line="--add-exports=openjceplus/com.ibm.crypto.plus.provider.ock=ALL-UNNAMED" />
 			<classpath>
 				<pathelement location="junit4.jar" />
