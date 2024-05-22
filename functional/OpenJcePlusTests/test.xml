@@ -44,23 +44,23 @@
 		</java>
 	</target>
 	<target name="test">
-		<junitlauncher printsummary="true">
+		<junit fork="yes" printsummary="on" showoutput="yes" haltonfailure="yes">
+			<jvmarg line="--add-exports=java.base/sun.security.util=ALL-UNNAMED" />
+			<jvmarg line="--add-exports=openjceplus/com.ibm.crypto.plus.provider.ock=ALL-UNNAMED" />
 			<classpath>
+				<pathelement location="junit4.jar" />
 				<pathelement location="hamcrest-core.jar" />
 				<pathelement location="bcprov-jdk18on.jar" />
 				<pathelement location="openjceplus-tests.jar" />
-				<pathelement location="junit-platform-commons.jar" />
-				<pathelement location="junit-platform-engine.jar" />
-				<pathelement location="junit-platform-launcher.jar" />
-				<pathelement location="opentest4j.jar" />
+				<pathelement location="junit-jupiter-params.jar" />
+				<pathelement location="junit-platform-suite.jar" />
+				<pathelement location="junit-platform-suite-api.jar" />
 				<pathelement location="junit-jupiter-api.jar" />
-				<pathelement location="junit-jupiter-engine.jar" />
 			</classpath>
-			<test name="ibm.jceplus.junit.TestIntegration" outputDir="junitreports">
-				<listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/>
-			</test>
-		</junitlauncher>
-		<echo message="TestAll COMPLETED" />
+			<formatter type="xml" />
+			<test name="ibm.jceplus.junit.TestIntegration" todir="junitreports"/>
+		</junit>
+		<echo message="TestMultithreadFIPS COMPLETED" />
 		<echo message="ALL TESTS COMPLETED" />
 	</target>
 </project>
