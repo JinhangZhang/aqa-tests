@@ -16,4 +16,4 @@ security.provider.12=JdkSASL
 security.provider.13=SunPKCS11
 jceks.key.serialFilter = java.base/java.lang.Enum;java.base/java.security.KeyRep;\
   java.base/java.security.KeyRep$Type;java.base/javax.crypto.spec.SecretKeySpec;\
-  com.ibm.crypto.plus.provider.JCEPlusKeyRep;!*
+  com.ibm.crypto.plus.provider.JCEPlusKeyRep;com.ibm.crypto.plus.provider.JCEPlusKeyRep$Type;!*
